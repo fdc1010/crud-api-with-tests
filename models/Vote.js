@@ -8,12 +8,12 @@ const Vote = () => {
         // This user voting
         user: {
             type: Schema.Types.ObjectId,
-            ref: "users",
+            ref: "user",
         },
         // The profile voted by this user
         voted_profile: {
             type: Schema.Types.ObjectId,
-            ref: "users",
+            ref: "user",
         },
         date: {
             type: Date,

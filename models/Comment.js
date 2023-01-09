@@ -8,12 +8,12 @@ const Comment = () => {
         // The user commenting
         user: {
             type: Schema.Types.ObjectId,
-            ref: "users",
+            ref: "user",
         },
         // The profile commented by this user
         commented_profile: {
             type: Schema.Types.ObjectId,
-            ref: "users",
+            ref: "user",
         },
         content: {
             type: String,
