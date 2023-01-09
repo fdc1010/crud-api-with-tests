@@ -25,7 +25,7 @@ const Comment = () => {
         },
     });
 
-    const comment = mongoose.model("Comments", CommentSchema);
+    const comment = mongoose.model("comment", CommentSchema);
     
     return comment;
 };

@@ -42,7 +42,7 @@ const User = () => {
         },
     });
 
-    const user = mongoose.model("users", UserSchema);
+    const user = mongoose.model("user", UserSchema);
     
     return user;
 };

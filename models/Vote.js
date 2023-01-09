@@ -21,7 +21,7 @@ const Vote = () => {
         },
     });
 
-    const vote = mongoose.model("votes", VoteSchema);
+    const vote = mongoose.model("vote", VoteSchema);
 
     return vote;
 };
