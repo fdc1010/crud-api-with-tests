@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --detectOpenHandles"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "Boo Developers <dev@boo.com>",
