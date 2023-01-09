@@ -1,0 +1,41 @@
+[
+  {
+    "_id": "6025aa32f58e665c78a13d75",
+    "name": "A Martinez",
+    "description": "Adolph Larrue Martinez III.",
+    "mbti": "ISFJ",
+    "enneagram": "9w3",
+    "variant": "sp/so",
+    "tritype": 725,
+    "socionics": "SEE",
+    "sloan": "RCOEN",
+    "psyche": "FEVL",
+    "image": "https://soulverse.boo.world/images/1.png"
+  },
+  {
+    "_id": "6025aa67f58e665c78a13d76",
+    "name": "L Apple",
+    "description": "Leo Mansanas Apple",
+    "mbti": "ADVJ",
+    "enneagram": "8w2",
+    "variant": "sa/so",
+    "tritype": 625,
+    "socionics": "GES",
+    "sloan": "ITOEN",
+    "psyche": "AKVJ",
+    "image": "https://soulverse.boo.world/images/1.png"
+  },
+  {
+    "_id": "6025f76bf58e665c78a13d77",
+    "name": "L Apple",
+    "description": "Leo Mansanas Apple",
+    "mbti": "ADVJ",
+    "enneagram": "8w2",
+    "variant": "sa/so",
+    "tritype": 625,
+    "socionics": "GES",
+    "sloan": "ITOEN",
+    "psyche": "AKVJ",
+    "image": "https://soulverse.boo.world/images/1.png"
+  }
+]
