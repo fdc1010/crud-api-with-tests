@@ -42,43 +42,38 @@ afterAll(async () => {
               .delete(`/api/profile/deleteAll`);
 }); 
 
-// export default (app) => {
 
-  describe('1 - Profile CRUD', () => { 
+describe('1 - Profile CRUD', () => { 
+  
+
+  it("POST /api/profile/add = CREATE Profile API", async () => {
+    const res = await request(app)
+      .post("/api/profile/add")
+      .send(mock_data[1])
+      .expect(200);
+    expect(res.body.success).toBe(true);
+    expect(res.body.data).toHaveProperty('name');
+    expect(res.body.data).toHaveProperty('description');
+    expect(res.body.data).toHaveProperty('image');
     
 
-    it("POST /api/profile/add = CREATE Profile API", async () => {
-      const res = await request(app)
-        .post("/api/profile/add")
-        .send(mock_data[1])
-        .expect(200);
+  });        
+  
+  it("PUT /api/profile/edit/:id = UPDATE Profile API", async () => {
+    const res = await request(app)
+      .put(`/api/profile/edit/${mock_data[1]._id}`)
+      .send(mock_data[2])
+      .expect(200);
       expect(res.body.success).toBe(true);
-      expect(res.body.data).toHaveProperty('name');
-      expect(res.body.data).toHaveProperty('description');
-      expect(res.body.data).toHaveProperty('image');
-      
-
-    });        
-    
-    it("PUT /api/profile/edit/:id = UPDATE Profile API", async () => {
-      const res = await request(app)
-        .put(`/api/profile/edit/${mock_data[1]._id}`)
-        .send(mock_data[2])
-        .expect(200);
-        expect(res.body.success).toBe(true);
-        // expect(res.body.data).toHaveProperty('name');
-        // expect(res.body.data).toHaveProperty('description');
-        // expect(res.body.data).toHaveProperty('image');
-    });
-
-    it("Get /api/profile/ = Get All Profile", async () => {
-      const res = await request(app)
-        .get(`/api/profile/`)
-        .expect(200);
-        expect(res.body).toBeDefined();
-        expect(typeof res.body.data).toBe('object');
-        expect(res.body.success).toBe(true);
-        
-    });  
   });
-// }
+
+  it("Get /api/profile/ = Get All Profile", async () => {
+    const res = await request(app)
+      .get(`/api/profile/`)
+      .expect(200);
+      expect(res.body).toBeDefined();
+      expect(typeof res.body.data).toBe('object');
+      expect(res.body.success).toBe(true);
+      
+  });  
+});

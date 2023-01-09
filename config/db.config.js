@@ -1,2 +1,1 @@
 export const url = "mongodb://root:fdc101082@localhost:27017/db_boo?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256";
-// export const MemoryURI = "mongodb://root:fdc101082@localhost:27017/db_boo-tests?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256";
