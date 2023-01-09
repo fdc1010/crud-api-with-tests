@@ -8,5 +8,6 @@ router.get('/find/:id', VoteController.get);
 router.post('/add', VoteController.create);
 router.put('/edit/:id', VoteController.update);
 router.delete('/delete/:id', VoteController.delete);
+router.delete('/deleteAll', VoteController.deleteAll);
 
 export const API_Vote = router;

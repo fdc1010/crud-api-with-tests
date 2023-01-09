@@ -8,5 +8,6 @@ router.get('/find/:id', ProfileController.get);
 router.post('/add', ProfileController.create);
 router.put('/edit/:id', ProfileController.update);
 router.delete('/delete/:id', ProfileController.delete);
+router.delete('/deleteAll', ProfileController.deleteAll);
 
 export const API_Profile = router;

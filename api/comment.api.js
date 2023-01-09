@@ -8,5 +8,6 @@ router.get('/find/:id', CommentController.get);
 router.post('/add', CommentController.create);
 router.put('/edit/:id', CommentController.update);
 router.delete('/delete/:id', CommentController.delete);
+router.delete('/deleteAll', CommentController.deleteAll);
 
 export const API_Comment = router;
