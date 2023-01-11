@@ -2,3 +2,4 @@ node_modules
 coverage
 target
 yarn.lock
+package-lock.json
