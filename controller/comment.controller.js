@@ -11,12 +11,12 @@ const CommentController = {
     },
     get: async(req, res) => {
         console.log("Get Comment API by ID!");
-        const results = await collection.find(req.params.id).sort({date:-1});
+        const results = await collection.find(req.params.id).sort({date:-1}).populate(["user","commented_profile"]);
         res.json({data: results, success: true});
     },
     all: async(req, res) => {
         console.log("Get All Comment API!");
-        const results = await collection.find().sort({date:-1});
+        const results = await collection.find().sort({date:-1}).populate(["user","commented_profile"]);
         res.json({data: results, success: true});
     },
     update: async(req, res) => {

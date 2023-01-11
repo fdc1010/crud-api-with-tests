@@ -11,12 +11,12 @@ const VoteController = {
     },
     get: async(req, res) => {
         console.log("Get Vote API by ID!");
-        const results = await collection.find(req.params.id).sort({date:-1});
+        const results = await collection.find(req.params.id).sort({date:-1}).populate(["user","voted_profile"]);
         res.json({data: results, success: true});
     },
     all: async(req, res) => {
         console.log("Get All Vote API!");
-        const results = await collection.find().sort({date:-1});
+        const results = await collection.find().sort({date:-1}).populate(["user","voted_profile"]);
         res.json({data: results, success: true});
     },
     update: async(req, res) => {

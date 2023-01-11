@@ -11,12 +11,49 @@ const ProfileController = {
     },
     get: async(req, res) => {
         console.log("Get Profile API by ID!");
-        const results = await collection.find(req.params.id).sort({date:-1});
-        res.json({data: results, success: true});
+        // const results = await collection.find(req.params.id).sort({date:-1});
+        const results = await collection.aggregate([
+                                                    {
+                                                        $match : { "_id": req.params.id }
+                                                    },
+                                                    {
+                                                        $lookup: { from : "comments", localField: "_id", foreignField: "user", as: "my_comments" }
+                                                    },
+                                                    {          
+                                                        $lookup: { from : "votes", localField: "_id", foreignField: "user", as: "my_votes" }
+                                                    },
+                                                    {          
+                                                        $lookup: { from : "comments", localField: "_id", foreignField: "commented_profile", as: "their_comments" }
+                                                    },
+                                                    {         
+                                                        $lookup: { from : "votes", localField: "_id", foreignField: "voted_profile", as: "their_votes" }
+                                                    },
+                                                    {
+                                                        $sort: { date: -1 }
+                                                    }
+                                                    ]);                                                    
+        const profile = results[0];
+        res.json({data: profile, success: true});
     },
     all: async(req, res) => {
         console.log("Get All Profile API!");
-        const results = await collection.find().sort({date:-1});
+        const results = await collection.aggregate([
+                                {
+                                    $lookup: { from : "comments", localField: "_id", foreignField: "user", as: "my_comments" }
+                                },
+                                {          
+                                    $lookup: { from : "votes", localField: "_id", foreignField: "user", as: "my_votes" }
+                                },
+                                {          
+                                    $lookup: { from : "comments", localField: "_id", foreignField: "commented_profile", as: "their_comments" }
+                                },
+                                {         
+                                    $lookup: { from : "votes", localField: "_id", foreignField: "voted_profile", as: "their_votes" }
+                                },
+                                {
+                                    $sort: { date: -1 }
+                                }
+            ]);
         res.json({data: results, success: true});
     },
     update: async(req, res) => {
