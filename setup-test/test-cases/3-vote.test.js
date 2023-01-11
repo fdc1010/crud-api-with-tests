@@ -19,8 +19,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    await request(app)
-                    .delete(`/api/vote/deleteAll`);
+    await request(app).delete(`/api/vote/deleteAll`);
 });
 
 describe('3 - Vote CRUD', () => {

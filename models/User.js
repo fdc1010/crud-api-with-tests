@@ -4,7 +4,7 @@ const User = () => {
 
     const {Schema} = mongoose;
 
-    const UserSchema = new Schema({
+    return mongoose.model("user", Schema({
         name: {
             type: String,
             required: true,
@@ -40,10 +40,6 @@ const User = () => {
             type: Date,
             default: Date.now,
         },
-    });
-
-    const user = mongoose.model("user", UserSchema);
-    
-    return user;
+    }));
 };
 export default User;

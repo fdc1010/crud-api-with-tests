@@ -38,8 +38,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await request(app)
-              .delete(`/api/profile/deleteAll`);
+  await request(app).delete(`/api/profile/deleteAll`);
 }); 
 
 

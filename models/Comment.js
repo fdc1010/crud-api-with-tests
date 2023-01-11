@@ -4,7 +4,7 @@ const Comment = () => {
 
     const {Schema} = mongoose;
 
-    const CommentSchema = Schema({
+    return mongoose.model("comment", Schema({
         // The user commenting
         user: {
             type: Schema.Types.ObjectId,
@@ -23,10 +23,6 @@ const Comment = () => {
             type: Date,
             default: Date.now,
         },
-    });
-
-    const comment = mongoose.model("comment", CommentSchema);
-    
-    return comment;
+    }));
 };
 export default Comment;

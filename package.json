@@ -2,10 +2,11 @@
   "name": "boo-app",
   "version": "1.0.0",
   "description": "boo-app coding skill test",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "node index.js",
+    "start:mockdata": "node index.js --with-mockdata",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --detectOpenHandles --forceExit"
   },
   "keywords": [],

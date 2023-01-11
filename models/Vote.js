@@ -4,7 +4,7 @@ const Vote = () => {
 
     const {Schema} = mongoose;
 
-    const VoteSchema = Schema({
+    return mongoose.model("vote", Schema({
         // This user voting
         user: {
             type: Schema.Types.ObjectId,
@@ -19,10 +19,6 @@ const Vote = () => {
             type: Date,
             default: Date.now,
         },
-    });
-
-    const vote = mongoose.model("vote", VoteSchema);
-
-    return vote;
+    }));
 };
 export default Vote;

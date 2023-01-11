@@ -19,8 +19,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    await request(app)
-                .delete(`/api/comment/deleteAll`);
+    await request(app).delete(`/api/comment/deleteAll`);
 });
 
 describe('2 - Comment CRUD', () => {
