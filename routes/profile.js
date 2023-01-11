@@ -20,8 +20,7 @@ router.get('/*', async (req, res, next) => {
       },
       {
           $sort: { date: -1 }
-      },
-      {   $limit: 1 }
+      }
   ]);
   console.log("profile",profile[0]);
   res.render('profile_template', {
